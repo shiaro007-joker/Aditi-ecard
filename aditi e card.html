@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Chartered Accountant E-Visiting Card</title>
+  <meta name="description" content="Mobile-friendly HTML e-visiting card template for chartered accountants." />
+  <link rel="preconnect" href="https://api.fontshare.com" />
+  <link href="https://api.fontshare.com/v2/css?f[]=general-sans@400,500,600,700&display=swap" rel="stylesheet" />
+  <style>
+    :root,[data-theme="light"]{
+      --text-xs:clamp(.75rem,.7rem + .25vw,.875rem);
+      --text-sm:clamp(.875rem,.8rem + .35vw,1rem);
+      --text-base:clamp(1rem,.95rem + .25vw,1.0625rem);
+      --text-lg:clamp(1.125rem,1rem + .75vw,1.5rem);
+      --text-xl:clamp(1.5rem,1.2rem + 1.25vw,2rem);
+      --space-1:.25rem;--space-2:.5rem;--space-3:.75rem;--space-4:1rem;--space-5:1.25rem;--space-6:1.5rem;--space-8:2rem;--space-10:2.5rem;
+      --color-bg:#f8fafc;--color-surface:#ffffff;--color-surface-2:#f1f5f9;--color-border:#cbd5e1;--color-divider:#e2e8f0;
+      --color-text:#1e293b;--color-text-muted:#64748b;--color-text-faint:#94a3b8;--color-text-inverse:#f9f8f4;
+      --color-primary:#3b82f6;--color-primary-hover:#1e40af;--color-primary-highlight:#e0e7ff;--color-success:#1e40af;
+      --radius-md:.8rem;--radius-lg:1.25rem;--radius-xl:1.75rem;--radius-full:9999px;
+      --shadow-sm:0 4px 20px rgba(24,26,28,.08);--shadow-lg:0 18px 48px rgba(24,26,28,.14);
+      --font-body:'General Sans',system-ui,sans-serif;
+    }
+        *,:before,:after{box-sizing:border-box}
+    html{-webkit-text-size-adjust:none;text-size-adjust:none;scroll-behavior:smooth}
+    body{margin:0;min-height:100dvh;font-family:var(--font-body);font-size:var(--text-base);line-height:1.55;background:
+      radial-gradient(circle at top right, rgba(59,130,246,.15), transparent 34%),
+      linear-gradient(180deg, var(--color-bg), var(--color-surface-2));color:var(--color-text)}
+    a{text-decoration:none;color:inherit}
+    button,input{font:inherit}
+    .page{min-height:100dvh;display:grid;place-items:center;padding:max(env(safe-area-inset-top),var(--space-4)) var(--space-4) max(env(safe-area-inset-bottom),var(--space-6))}
+    .card{width:min(100%,25rem);background:rgba(255,255,255,.92);backdrop-filter:blur(18px);border:1px solid color-mix(in srgb, var(--color-text) 10%, transparent);border-radius:var(--radius-xl);box-shadow:var(--shadow-lg);overflow:hidden}
+    .topbar{display:flex;justify-content:flex-start;align-items:center;padding:var(--space-4) var(--space-4) 0}
+    .chip{display:inline-flex;align-items:center;gap:var(--space-2);padding:.55rem .85rem;border-radius:var(--radius-full);background:#e0e7ff;color:#1e40af;font-size:var(--text-xs);font-weight:700;letter-spacing:.04em;text-transform:uppercase}
+        .hero{padding:var(--space-4) var(--space-4) var(--space-3);display:grid;gap:var(--space-4)}
+    .identity{display:grid;grid-template-columns:auto 1fr;gap:var(--space-4);align-items:center}
+    .logo{width:5.3rem;height:5.3rem;border-radius:1.3rem;display:grid;place-items:center;color:#fff;box-shadow:var(--shadow-sm);overflow:hidden;border:1px solid color-mix(in srgb, var(--color-text) 8%, transparent)}
+    .name{font-size:var(--text-xl);line-height:1.05;font-weight:700;letter-spacing:-.03em}
+    .role{margin-top:.35rem;color:var(--color-text-muted);font-size:var(--text-sm)}
+    .firm{display:flex;align-items:center;gap:var(--space-2);color:var(--color-text);font-weight:600;font-size:var(--text-sm)}
+    .services{display:flex;flex-wrap:wrap;gap:var(--space-2)}
+    .tag{padding:.52rem .78rem;border-radius:var(--radius-full);background:#f1f5f9;border:1px solid #e3d2ef;font-size:var(--text-xs);color:var(--color-text-muted)}
+    .section{padding:var(--space-4);border-top:1px solid var(--color-divider)}
+    .label{font-size:var(--text-xs);text-transform:uppercase;letter-spacing:.08em;color:var(--color-text-faint);margin-bottom:var(--space-3);font-weight:700}
+    .contact-list{display:grid;gap:var(--space-3)}
+    .contact-item{display:grid;grid-template-columns:2.75rem 1fr auto;gap:var(--space-3);align-items:center;padding:.88rem .9rem;border-radius:var(--radius-lg);background:#f1f5f9;border:1px solid #e3d2ef}
+    .icon-wrap{width:2.75rem;height:2.75rem;border-radius:1rem;display:grid;place-items:center;background:#e0e7ff;color:#1e40af}
+    .contact-main{min-width:0}
+    .contact-title{font-size:var(--text-xs);color:var(--color-text-faint);text-transform:uppercase;letter-spacing:.06em}
+    .contact-value{display:none}
+    .contact-action{font-size:var(--text-xs);color:#1e40af;font-weight:700}
+    .about{color:var(--color-text-muted);font-size:var(--text-sm)}
+    .actions{display:grid;grid-template-columns:1fr 1fr;gap:var(--space-3)}
+    .btn{min-height:48px;padding:.9rem 1rem;border-radius:var(--radius-lg);display:inline-flex;align-items:center;justify-content:center;gap:var(--space-2);font-size:var(--text-sm);font-weight:700;border:1px solid transparent;cursor:pointer}
+    .btn-primary{background:linear-gradient(135deg,#3b82f6,#3b82f6);color:#fff}
+    .btn-secondary{background:transparent;border-color:#cbd5e1;color:var(--color-text)}
+    .footer{padding:0 var(--space-4) var(--space-4);color:var(--color-text-faint);font-size:var(--text-xs);text-align:center}
+        .btn:hover{filter:brightness(.98)}
+        .qr{display:grid;place-items:center;padding:var(--space-4);border-radius:var(--radius-lg);background:repeating-linear-gradient(45deg,var(--color-surface-2),var(--color-surface-2) 10px,color-mix(in srgb,var(--color-primary-highlight) 55%, transparent) 10px,color-mix(in srgb,var(--color-primary-highlight) 55%, transparent) 20px)}
+    .qr-box{width:7rem;height:7rem;border-radius:1rem;background:
+      linear-gradient(90deg,var(--color-text) 10%,transparent 10%) 0 0/18px 18px,
+      linear-gradient(var(--color-text) 10%,transparent 10%) 0 0/18px 18px,
+      radial-gradient(circle at 25% 25%,var(--color-text) 0 18%,transparent 19%),
+      radial-gradient(circle at 75% 25%,var(--color-text) 0 18%,transparent 19%),
+      radial-gradient(circle at 50% 70%,var(--color-text) 0 14%,transparent 15%),
+      #fff;border:8px solid #fff;box-shadow:var(--shadow-sm)}
+    .visually-hidden{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+    @media (max-width:380px){
+      .identity{grid-template-columns:1fr;justify-items:start}
+      .actions{grid-template-columns:1fr}
+      .contact-item{grid-template-columns:2.75rem 1fr}
+      .contact-action{display:none}
+    }
+  .theme-btn{min-width:44px;min-height:44px;border:none;border-radius:50%;display:grid;place-items:center;background:#f1f5f9;color:#1e40af;box-shadow:var(--shadow-sm);cursor:pointer}\n.btn:active,.theme-btn:active,.contact-item:active{transform:translateY(1px)}\n.contact-item:hover,.theme-btn:hover{box-shadow:var(--shadow-sm)}\n</style>
+</head>
+<body>
+  <a class="visually-hidden" href="#main">Skip to content</a>
+  <main class="page" id="main">
+    <article class="card" aria-label="Chartered accountant e-visiting card">
+      <div class="topbar">
+        <span class="chip">ICAI Member</span>
+        
+      </div>
+
+      <section class="hero">
+        <div class="identity">
+          <div class="logo" aria-hidden="true" style="background:#ffffff;padding:.5rem;">
+            <img src="https://images.indianexpress.com/2023/12/New-CA-logo.jpg?w=1200" alt="CA India logo" width="84" height="48" loading="lazy" style="width:100%;height:100%;object-fit:contain;border-radius:.9rem;" />
+          </div>
+          <div>
+            <div class="name">Aditi Thapar Arora</div>
+            <div class="role">Chartered Accountant</div>
+            <div class="firm">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 21h18"></path><path d="M5 21V7l7-4 7 4v14"></path><path d="M9 9h.01"></path><path d="M9 13h.01"></path><path d="M9 17h.01"></path><path d="M15 9h.01"></path><path d="M15 13h.01"></path><path d="M15 17h.01"></path></svg>
+              Thapar & Associates
+            </div>
+          </div>
+        </div>
+        <div class="services" aria-label="Services offered">
+          <span class="tag">Tax Planning</span>
+          <span class="tag">GST Filing</span>
+          <span class="tag">Audit & Assurance</span>
+          <span class="tag">Business Compliance</span>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="label">Contact</div>
+        <div class="contact-list">
+<a class="contact-item" href="tel:+919811500497">
+            <span class="icon-wrap" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.9.33 1.78.63 2.62a2 2 0 0 1-.45 2.11L8 9.91a16 16 0 0 0 6.09 6.09l1.46-1.29a2 2 0 0 1 2.11-.45c.84.3 1.72.51 2.62.63A2 2 0 0 1 22 16.92z"></path></svg>
+            </span>
+            <span class="contact-main">
+              <span class="contact-title">Call now</span>
+              <span class="contact-value"></span>
+            </span>
+            <span class="contact-action">Call now</span>
+          </a>
+
+<a class="contact-item" href="https://wa.me/919811500497?text=Hello%20Aditi%20Thapar%20Arora%2C%20I%20would%20like%20to%20connect." target="_blank" rel="noopener noreferrer">
+            <span class="icon-wrap" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-1.9 5.4A8.5 8.5 0 1 1 21 11.5Z"></path><path d="M8 12h.01"></path><path d="M12 12h.01"></path><path d="M16 12h.01"></path></svg>
+            </span>
+            <span class="contact-main">
+              <span class="contact-title">Chat on WhatsApp</span>
+              <span class="contact-value"></span>
+            </span>
+            <span class="contact-action">Chat</span>
+          </a>
+
+<a class="contact-item" href="mailto:caaditithapararora02@gmail.com">
+            <span class="icon-wrap" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="m3 7 9 6 9-6"></path></svg>
+            </span>
+            <span class="contact-main">
+              <span class="contact-title">Send email</span>
+              <span class="contact-value"></span>
+            </span>
+            <span class="contact-action">Send</span>
+          </a>
+
+<a class="contact-item" href="upi://pay?pa=9811500497@pthdfc&pn=CA%20Aditi%20Thapar%20Arora&am=0&cu=INR" target="_blank" rel="noopener noreferrer">
+            <span class="icon-wrap" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 7h20"></path><rect x="2" y="5" width="20" height="14" rx="2"></rect><path d="M6 15h4"></path></svg>
+            </span>
+            <span class="contact-main">
+              <span class="contact-title">UPI Payment</span>
+              <span class="contact-value"></span>
+            </span>
+            <span class="contact-action">Pay</span>
+          </a>
+
+<a class="contact-item" href="https://maps.google.com/?q=French+Apartment+Sector+16B+Noida+Extension+Greater+Noida+West" target="_blank" rel="noopener noreferrer">
+            <span class="icon-wrap" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 1 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+            </span>
+            <span class="contact-main">
+              <span class="contact-title">Office location</span>
+              <span class="contact-value"></span>
+            </span>
+            <span class="contact-action">Locate</span>
+          </a>
+
+<a class="contact-item" href="https://ai.icai.org" target="_blank" rel="noopener noreferrer">
+            <span class="icon-wrap" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><path d="M2 12h20"></path><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+            </span>
+            <span class="contact-main">
+              <span class="contact-title">Visit website</span>
+              <span class="contact-value"></span>
+            </span>
+            <span class="contact-action">Visit</span>
+          </a>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="label">Profile</div>
+        <p class="about">Trusted support for tax, audit, compliance, advisory, and financial documentation for individuals, startups, and growing businesses.</p>
+      </section>
+
+      <section class="section">
+        <div class="label">Quick actions</div>
+        <div class="actions">
+          <a class="btn btn-primary" href="mailto:caaditithapararora02@gmail.com?subject=Consultation%20Request">Book Consultation</a>
+          <button class="btn btn-secondary" type="button" id="saveContactBtn">Save Contact</button>
+        </div>
+      </section>
+
+      <div class="footer">Contact details stay private on the front while quick action buttons let visitors call, email, chat, pay, or open location directly.</div>
+    </article>
+  </main>
+
+  <script>
+    (() => {
+      const root = document.documentElement;
+      const toggle = document.querySelector('[data-theme-toggle]');
+      const key = "ca_card_theme";
+      const saved = localStorage.getItem(key);
+      const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+      let mode = saved || (prefersDark ? "dark" : "light");
+      const moon = "<svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z\"></path></svg>";
+      const sun = "<svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><circle cx=\"12\" cy=\"12\" r=\"5\"></circle><path d=\"M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42\"></path></svg>";
+      const applyTheme = () => { root.setAttribute('data-theme', mode); if (toggle) { toggle.innerHTML = mode === "dark" ? sun : moon; toggle.setAttribute('aria-label', mode === "dark" ? "Switch to light mode" : "Switch to dark mode"); } };
+      applyTheme();
+      if (toggle) toggle.addEventListener('click', () => { mode = mode === "dark" ? "light" : "dark"; localStorage.setItem(key, mode); applyTheme(); });
+      document.getElementById('saveContactBtn').addEventListener('click', () => {
+        const vcard = [
+          'BEGIN:VCARD',
+          'VERSION:3.0',
+          'FN:Aditi Thapar Arora',
+          'N:Arora;Aditi Thapar;;;',
+          'ORG:Thapar & Associates',
+          'TITLE:Chartered Accountant',
+          'TEL;TYPE=CELL:+919811500497',
+          'EMAIL:caaditithapararora02@gmail.com',
+          'URL:https://ai.icai.org',
+          'ADR;TYPE=WORK:;;French apartment, sector-16b, Noida Extension, Greater Noida West;;;;India',
+          'END:VCARD'
+        ].join('\n');
+        const blob = new Blob([vcard], { type: 'text/vcard;charset=utf-8' });
+        const link = document.createElement('a');
+        link.href = URL.createObjectURL(blob);
+        link.download = 'aditi-thapar-arora.vcf';
+        document.body.appendChild(link);
+        link.click();
+        link.remove();
+        setTimeout(() => URL.revokeObjectURL(link.href), 1000);
+      });
+    })();
+  </script>
+</body>
+</html>
